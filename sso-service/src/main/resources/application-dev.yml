@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://39.107.253.236:3306/library5?useUnicode=true&characterEncoding=utf8&emptyStringsConvertToZero=true&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      validationQuery: select 'x'
+      maxActive: 20
+      initialSize: 1
+      minIdle: 3
+      maxWait: 600
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+      filter:
+        stat:
+          log-slow-sql: true
+  redis:
+    database: 0
+    timeout: 0ms
+    host: 39.107.253.236
+    port: 6379
+    password: admin
+
+dubbo:
+  scan:
+  #发布服务扫描的路径
+    base-packages: com.example.sso.service.impl
+  application:
+  #dubbo服务名
+    name: sso-service
+  protocol:
+  #dubbo的RPC协议
+    name: dubbo
+  #dubbo的RPC端口
+    port: 20880
+  provider:
+  #远程服务超时时间
+    timeout: 5000
+  registry:
+  #注册中中心
+    address: zookeeper://39.107.253.236:2181
+    check: false
+
+

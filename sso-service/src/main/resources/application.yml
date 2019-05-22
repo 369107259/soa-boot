@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: sso-service
+  profiles:
+    active: dev
+  aop:
+#  使用JDK动态代理
+    proxy-target-class: false
+pagehelper:
+  reasonable: true
+  row-bounds-with-count: true
+  offset-as-page-num: true
+  params: count=countSql
+
