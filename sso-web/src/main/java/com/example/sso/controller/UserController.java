@@ -2,13 +2,10 @@ package com.example.sso.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.example.common.result.JSONResult;
-import com.example.entity.User;
 import com.example.nozzle.IUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @program: soa-boot
@@ -20,7 +17,7 @@ import java.util.List;
 @RequestMapping("/api/user")
 public class UserController {
 
-    @Reference
+    @Reference(group = "another")
     private IUserService userService;
 
     @GetMapping("/get")

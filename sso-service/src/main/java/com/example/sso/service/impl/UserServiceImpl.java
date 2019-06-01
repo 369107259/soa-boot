@@ -1,7 +1,6 @@
 package com.example.sso.service.impl;
 
 import com.example.dao.mapper.UserMapper;
-import com.example.entity.User;
 import com.example.nozzle.IUserService;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +13,7 @@ import javax.annotation.Resource;
  * @create: 2019-04-23 22:02
  **/
 @Component
-@com.alibaba.dubbo.config.annotation.Service
+@com.alibaba.dubbo.config.annotation.Service(group = "user")
 public class UserServiceImpl implements IUserService {
 
     @Resource
