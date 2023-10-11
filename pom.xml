@@ -29,7 +29,7 @@
         <dubbo-spring-boot.version>0.2.0</dubbo-spring-boot.version>
         <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
         <dubbo.version>2.6.2</dubbo.version>
-        <zookeeper.version>3.4.10</zookeeper.version>
+        <zookeeper.version>3.7.2</zookeeper.version>
     </properties>
 
     <dependencyManagement>
